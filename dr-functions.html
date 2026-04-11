@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funzioni di Dromi</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #e8f5e9;
+}
+
+/* TOP BAR */
+.topbar {
+  background: #2e7d32;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+/* HAMBURGER */
+.hamburger {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* MENU */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100%;
+  background: #2e7d32;
+  transition: 0.3s;
+  z-index: 2000;
+}
+
+.menu-overlay.open {
+  right: 0;
+}
+
+.menu-overlay iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* OVERLAY */
+.overlay-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 1000;
+}
+
+.overlay-bg.show {
+  display: block;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.header h1 {
+  color: #2e7d32;
+}
+
+/* DOCS */
+.docs {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* BOX FUNZIONI */
+.func-box {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.func-box h2 {
+  margin-top: 0;
+  color: #2e7d32;
+}
+
+/* CODICE */
+pre {
+  background: #f4f4f4;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+/* ESEMPIO */
+.example {
+  background: #1e1e1e;
+  color: #00ff88;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* SEPARATORE */
+hr {
+  margin: 40px 0;
+  border: none;
+  border-top: 2px solid #ddd;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="logo">Dromi</div>
+  <div class="hamburger" onclick="openMenu()">☰</div>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay-bg" id="bg" onclick="closeMenu()"></div>
+
+<!-- MENU -->
+<div class="menu-overlay" id="menu">
+  <iframe src="menubar.html"></iframe>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>📘 Funzioni di Dromi</h1>
+  <p>Funzioni base per creare interfacce grafiche</p>
+</div>
+
+<!-- DOCUMENTAZIONE -->
+<div class="docs">
+
+<div class="func-box">
+<h2>🟢 h1(text)</h2>
+<p><b>Utilità:</b> Mostra un titolo grande.</p>
+<pre>h1("Titolo principale")</pre>
+</div>
+
+<div class="func-box">
+<h2>🟢 h2(text)</h2>
+<p><b>Utilità:</b> Mostra un sottotitolo.</p>
+<pre>h2("Sottotitolo")</pre>
+</div>
+
+<div class="func-box">
+<h2>🟢 h3(text)</h2>
+<p><b>Utilità:</b> Titolo più piccolo.</p>
+<pre>h3("Titolo piccolo")</pre>
+</div>
+
+<div class="func-box">
+<h2>🟢 h4(text)</h2>
+<p><b>Utilità:</b> Titolo ancora più piccolo.</p>
+<pre>h4("Titolo mini")</pre>
+</div>
+
+<div class="func-box">
+<h2>🟢 p(text)</h2>
+<p><b>Utilità:</b> Mostra un paragrafo di testo.</p>
+<pre>p("Questo è un testo")</pre>
+</div>
+
+<div class="func-box">
+<h2>🟢 button(text)</h2>
+<p><b>Utilità:</b> Crea un bottone cliccabile.</p>
+<pre>button("Cliccami")</pre>
+</div>
+
+<div class="func-box">
+<h2>🟢 inputer()</h2>
+<p><b>Utilità:</b> Crea un campo di input.</p>
+<pre>inputer()</pre>
+</div>
+
+<div class="func-box">
+<h2>🟢 clear()</h2>
+<p><b>Utilità:</b> Pulisce la schermata.</p>
+<pre>clear()</pre>
+</div>
+
+<div class="func-box">
+<h2>🟢 update()</h2>
+<p><b>Utilità:</b> Aggiorna la finestra.</p>
+<pre>update()</pre>
+</div>
+
+<div class="func-box">
+<h2>🟢 set_window_size(width, height)</h2>
+<p><b>Utilità:</b> Imposta la dimensione della finestra.</p>
+<pre>set_window_size(800, 600)</pre>
+</div>
+
+<div class="func-box">
+<h2>🟢 set_window_title(title)</h2>
+<p><b>Utilità:</b> Cambia il titolo della finestra.</p>
+<pre>set_window_title("Dromi App")</pre>
+</div>
+
+<div class="func-box">
+<h2>🟢 run() / dr.init()</h2>
+<p><b>Utilità:</b> Avvia l'applicazione Dromi.</p>
+<pre>run()</pre>
+</div>
+
+<hr>
+
+<h2>🚀 Esempio Completo</h2>
+
+<pre class="example">
+set_window_title("Demo")
+set_window_size(800, 500)
+
+h1("Benvenuto!")
+p("Questa è una app Dromi")
+
+button("Clicca qui")
+inputer()
+
+run()
+</pre>
+
+</div>
+
+<script>
+function openMenu() {
+  document.getElementById("menu").classList.add("open");
+  document.getElementById("bg").classList.add("show");
+}
+
+function closeMenu() {
+  document.getElementById("menu").classList.remove("open");
+  document.getElementById("bg").classList.remove("show");
+}
+</script>
+
+</body>
+</html>
