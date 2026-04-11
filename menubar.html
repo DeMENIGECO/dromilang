@@ -8,88 +8,41 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: #2e7d32;
   color: white;
-  padding: 10px 20px;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 18px;
-}
-
+/* CONTENUTO MENU */
 .menu {
   display: flex;
+  flex-direction: column;
+  padding: 20px;
   gap: 15px;
 }
 
-.menu a {
+a {
   color: white;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 18px;
 }
 
-.menu a:hover {
+a:hover {
   text-decoration: underline;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    background: #388e3c;
-    position: absolute;
-    top: 50px;
-    right: 0;
-    width: 100%;
-    padding: 10px;
-  }
-
-  .menu.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="navbar">
-  <div class="logo">Dromi</div>
-
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-  <div class="menu" id="menu">
-    <a href="#" onclick="vaiA('index.html')">Home</a>
-    <a href="#">Versioni</a>
-    <a href="#">Scopri le Versioni</a>
-  </div>
+<div class="menu">
+  <a href="#" onclick="vaiA('index.html')">Home</a>
+  <a href="#">Versioni</a>
+  <a href="#">Scopri le Versioni</a>
 </div>
 
 <script>
-function toggleMenu() {
-  document.getElementById("menu").classList.toggle("show");
-}
-
 function vaiA(html) {
-  window.parent.href = html;
+  window.parent.location.href = html;
 }
 </script>
 
