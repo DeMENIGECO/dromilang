@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dromi Docs: Installazione 1.0.3</title>
+<title>Dromi Docs: 1.0.3</title>
 
 <style>
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   background: #e8f5e9;
 }
 
@@ -19,21 +19,32 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 15px 20px;
 }
 
 .logo {
   font-weight: bold;
+  font-size: 18px;
 }
 
-.hamburger {
+/* BOTTONE BACK */
+.back-btn {
+  background: rgba(255,255,255,0.15);
+  padding: 8px 14px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+.back-btn:hover {
+  background: rgba(255,255,255,0.25);
 }
 
 /* CONTENUTO */
 .container {
-  padding: 30px;
-  max-width: 800px;
+  padding: 25px;
+  max-width: 900px;
   margin: auto;
 }
 
@@ -44,13 +55,14 @@ body {
 
 .header h1 {
   color: #2e7d32;
+  margin-bottom: 10px;
 }
 
 /* STEP GUIDE */
 .steps {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 .step {
@@ -58,21 +70,21 @@ body {
   align-items: flex-start;
   gap: 15px;
   background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: 0.2s;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
 }
 
 .step:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px) scale(1.01);
   background: #c8e6c9;
 }
 
 /* NUMERO */
 .step-number {
-  min-width: 35px;
-  height: 35px;
+  min-width: 40px;
+  height: 40px;
   background: #2e7d32;
   color: white;
   font-weight: bold;
@@ -82,15 +94,40 @@ body {
   justify-content: center;
 }
 
-/* TESTO */
+/* LINK LISTA */
+.step-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .step-text a {
   color: #1b5e20;
   font-weight: bold;
   text-decoration: none;
+  padding: 4px 0;
+  transition: 0.2s;
 }
 
 .step-text a:hover {
   text-decoration: underline;
+  transform: translateX(3px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  .step {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .step-number {
+    margin-bottom: 10px;
+  }
 }
 </style>
 </head>
@@ -99,16 +136,14 @@ body {
 
 <div class="topbar">
   <div class="logo">Dromi Docs: 1.0.3</div>
-  <div class="hamburger" onclick="window.location.href = '../'">
-    ⬅ Torna ai Docs
-  </div>
+  <div class="back-btn" onclick="goBack()">⬅ Torna alla home dei Docs</div>
 </div>
 
 <div class="container">
 
   <div class="header">
-    <h1>Installare Dromi 1.0.3</h1>
-    <p>Segui questi semplici passaggi 👇</p>
+    <h1>Dromi 1.0.3</h1>
+    <p>Questa versione contiene bug fix e miglioramenti.</p>
   </div>
 
   <div class="steps">
@@ -116,46 +151,29 @@ body {
     <div class="step">
       <div class="step-number">1</div>
       <div class="step-text">
-        Vai agli 
-        <a href="https://demenigeco.github.io/dromilang/downloads.html">
-          installer
-        </a> 
-        e seleziona la versione <b>1.0.3</b>.
+        <a href="inst.html">📦 Installazione</a>
+        <a href="script.html">💻 Primo Script</a>
+        <a href="pip.html">📦 Script con PIP</a>
       </div>
     </div>
 
     <div class="step">
       <div class="step-number">2</div>
       <div class="step-text">
-        Scarica il file <b>.exe</b> che parte automaticamente.
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-number">3</div>
-      <div class="step-text">
-        Se appare un avviso di sicurezza, clicca su 
-        <b>"Ulteriori informazioni"</b> → <b>"Esegui comunque"</b>.
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-number">4</div>
-      <div class="step-text">
-        Segui le istruzioni a schermo.
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-number">5</div>
-      <div class="step-text">
-        🎉 Dromi è installato!
+        <a href="lista.html">📋 Fare una lista</a>
+        <a href="trblshooting.html">🛠 Risoluzione problemi</a>
       </div>
     </div>
 
   </div>
 
 </div>
+
+<script>
+function goBack() {
+  window.location.href = "../";
+}
+</script>
 
 </body>
 </html>
