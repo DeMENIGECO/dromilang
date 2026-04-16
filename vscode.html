@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estensione VS Code</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #e8f5e9;
+}
+
+/* TOP BAR */
+.topbar {
+  background: #2e7d32;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+/* HAMBURGER */
+.hamburger {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* OVERLAY MENU */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100%;
+  background: #2e7d32;
+  transition: 0.3s;
+  z-index: 2000;
+}
+
+/* APERTO */
+.menu-overlay.open {
+  right: 0;
+}
+
+/* iframe dentro */
+.menu-overlay iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* SFONDO SCURO */
+.overlay-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 1000;
+}
+
+.overlay-bg.show {
+  display: block;
+}
+
+/* CONTENUTO */
+.header {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.header h1 {
+  color: #2e7d32;
+}
+
+.vscode-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin: 30px auto;
+  padding: 14px 18px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  color: white;
+
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+  transition: all 0.25s ease;
+  font-size: 16px;
+
+  max-width: 320px;
+}
+
+.vscode-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.vscode-btn:active {
+  transform: scale(0.98);
+}
+
+.vscode-btn .icon {
+  font-size: 28px;
+}
+
+.vscode-btn .text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.vscode-btn small {
+  font-size: 12px;
+  opacity: 0.85;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="logo">Dromi</div>
+  <div class="hamburger" onclick="openMenu()">☰</div>
+</div>
+
+<!-- SFONDO SCURO -->
+<div class="overlay-bg" id="bg" onclick="closeMenu()"></div>
+
+<!-- MENU OVERLAY -->
+<div class="menu-overlay" id="menu">
+  <iframe src="menubar.html"></iframe>
+</div>
+
+<!-- CONTENUTO -->
+<div class="header">
+  <h1>Estensione VS Code</h1>
+  <p>Clicca per aprirlo:</p>
+  
+  <button class="vscode-btn" onclick="apriEstensione()">
+  Apri DrLance su VS Code
+</button>
+</div>
+
+<script>
+
+  function apriEstensione() {
+  window.location.href = "vscode:extension/DromiSofwares.dromisofwares-drlance";
+  }
+  
+function openMenu() {
+  document.getElementById("menu").classList.add("open");
+  document.getElementById("bg").classList.add("show");
+}
+
+function closeMenu() {
+  document.getElementById("menu").classList.remove("open");
+  document.getElementById("bg").classList.remove("show");
+}
+</script>
+
+</body>
+</html>
