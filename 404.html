@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 - Dromi</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #e8f5e9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* TESTO */
+h1 {
+  color: #2e7d32;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* FINESTRA MAC */
+.window {
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* HEADER MAC */
+.window-header {
+  background: #2e7d32;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* BOTTONI */
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+/* CONTENUTO */
+.window-content {
+  background: #1e1e1e;
+  color: #00ff9c;
+  font-family: monospace;
+  padding: 20px;
+  white-space: pre;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Whoops!</h1>
+<p>Non abbiamo trovato niente qui</p>
+
+<div class="window">
+  <div class="window-header">
+    <div class="buttons">
+      <div class="btn red"></div>
+      <div class="btn yellow"></div>
+      <div class="btn green"></div>
+    </div>
+  </div>
+  <div class="window-content">
+--snip--
+from mdl import jekyll #Motore GitHub Pages
+
+try:
+    client_req = jekyll.url.userrequest
+    jekyll.load(client_req)
+except jekyll.Html404:
+    #Whoops! 404!
+    jekyll.client.load404()
+--snip--
+  </div>
+</div>
+
+</body>
+</html>
