@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="it">
+  <!DOCTYPE html><html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +36,6 @@ body {
   letter-spacing: 1px;
 }
 
-/* HAMBURGER */
 .hamburger {
   font-size: 28px;
   cursor: pointer;
@@ -47,7 +46,7 @@ body {
   transform: scale(1.1);
 }
 
-/* OVERLAY MENU */
+/* MENU */
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -72,7 +71,6 @@ body {
   background: white;
 }
 
-/* SFONDO SCURO */
 .overlay-bg {
   position: fixed;
   top: 0;
@@ -90,30 +88,40 @@ body {
 }
 
 /* HERO */
-.header {
+.hero {
   text-align: center;
-  padding: 80px 20px 50px;
+  padding: 80px 20px 40px;
 }
 
-.header h1 {
+.hero h1 {
   color: var(--green);
   font-size: 34px;
   margin-bottom: 10px;
 }
 
-.header p {
+.hero p {
   font-size: 18px;
   opacity: 0.8;
 }
 
-/* CARD SECTION */
+/* SEZIONI */
+.section {
+  max-width: 900px;
+  margin: auto;
+  padding: 10px 20px 40px;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--green);
+  margin: 40px 0 20px;
+}
+
+/* CARDS */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
 }
 
 .card {
@@ -133,46 +141,66 @@ body {
   color: var(--green);
 }
 
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 14px;
+  opacity: 0.7;
+}
 </style></head><body><!-- TOPBAR --><div class="topbar">
   <div class="logo">Dromi</div>
   <div class="hamburger" onclick="openMenu()">☰</div>
-</div><!-- SFONDO SCURO --><div class="overlay-bg" id="bg" onclick="closeMenu()"></div><!-- MENU OVERLAY --><div class="menu-overlay" id="menu">
+</div><!-- MENU --><div class="overlay-bg" id="bg" onclick="closeMenu()"></div>
+<div class="menu-overlay" id="menu">
   <iframe src="menubar.html"></iframe>
-</div><!-- HERO --><div class="header">
+</div><!-- HERO --><div class="hero">
   <h1>Benvenuto su Dromi</h1>
   <p>Un linguaggio semplice, creato per programmare facile.</p>
-</div><!-- CARDS --><div class="cards">
-  <div class="card">
-    <h3>Facile</h3>
-    <p>Sintassi semplice e intuitiva per iniziare subito.</p>
-  </div>
-  <div class="card">
-    <h3>Veloce</h3>
-    <p>Esecuzione leggera e pensata per progetti piccoli.</p>
-  </div>
-  <div class="card">
-    <h3>Creativo</h3>
-    <p>Perfetto per esperimenti e idee nuove.</p>
-  </div>
+</div><!-- FEATURES --><div class="section">
+  <h2 class="section-title">Funzionalità</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Facile</h3>
+      <p>Sintassi semplice e intuitiva per iniziare subito.</p>
+    </div><div class="card">
+  <h3>Veloce</h3>
+  <p>Esecuzione leggera e pensata per progetti piccoli.</p>
+</div>
 
-  <div class="card">
-    <h3>GUI Facile</h3>
-    <p>Puoi fare interfacce grafiche in modo facile e veloce.</p>
-  </div>
+<div class="card">
+  <h3>Creativo</h3>
+  <p>Perfetto per esperimenti e idee nuove.</p>
+</div>
 
-  <h2>Sistemi operativi Supportati</h2>
-  <div class="card">
-    <h3>Windows 10/11</h3>
-    <p>Il sistema per PC più usato.</p>
-  </div>
+<div class="card">
+  <h3>GUI Facile</h3>
+  <p>Crei interfacce grafiche in modo semplice e veloce.</p>
+</div>
 
-  <div class="card">
-    <h3>Linux</h3>
-    <p>La  nuova build per Linux è disponibile!</p>
   </div>
+</div><!-- SYSTEMS --><div class="section">
+  <h2 class="section-title">Sistemi supportati</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Windows 10/11</h3>
+      <p>Il sistema più usato sui PC.</p>
+    </div><div class="card">
+  <h3>Linux</h3>
+  <p>Supporto in sviluppo e già disponibile in build.</p>
+</div>
 
-  <h1>I linguaggi sono difficili. Questo no.</h1>
-</div><script>
+  </div>
+</div><!-- SLOGAN --><div class="section">
+  <h2 class="section-title">Slogan</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>I linguaggi sono difficili.</h3>
+      <p>Questo no.</p>
+    </div>
+  </div>
+</div><footer>
+  Dromi • Progetto educativo di programmazione
+</footer><script>
 function openMenu() {
   document.getElementById("menu").classList.add("open");
   document.getElementById("bg").classList.add("show");
@@ -183,4 +211,4 @@ function closeMenu() {
   document.getElementById("bg").classList.remove("show");
 }
 </script></body>
-</html>
+  </html>
