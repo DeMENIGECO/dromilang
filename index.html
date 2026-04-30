@@ -1,4 +1,4 @@
-  <!DOCTYPE html><html lang="it">
+<!DOCTYPE html><html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +56,7 @@ body {
   height: 100%;
   background: var(--dark);
   transition: 0.35s ease;
-  z-index: 2000;
+  z-index: 3100; /* FIX: sopra overlay */
   box-shadow: -5px 0 20px rgba(0,0,0,0.3);
 }
 
@@ -69,6 +69,7 @@ body {
   height: 100%;
   border: none;
   background: white;
+  pointer-events: auto;
 }
 
 .overlay-bg {
@@ -79,7 +80,7 @@ body {
   height: 100%;
   background: rgba(0,0,0,0.5);
   display: none;
-  z-index: 1500;
+  z-index: 3000; /* sotto menu */
   backdrop-filter: blur(2px);
 }
 
@@ -147,16 +148,15 @@ footer {
   font-size: 14px;
   opacity: 0.7;
 }
-</style></head><body><!-- TOPBAR --><div class="topbar">
+</style></head><body><div class="topbar">
   <div class="logo">Dromi</div>
   <div class="hamburger" onclick="openMenu()">☰</div>
-</div><!-- MENU --><div class="overlay-bg" id="bg" onclick="closeMenu()"></div>
-<div class="menu-overlay" id="menu">
+</div><div class="overlay-bg" id="bg" onclick="closeMenu()"></div><div class="menu-overlay" id="menu">
   <iframe src="menubar.html"></iframe>
-</div><!-- HERO --><div class="hero">
+</div><div class="hero">
   <h1>Benvenuto su Dromi</h1>
   <p>Un linguaggio semplice, creato per programmare facile.</p>
-</div><!-- FEATURES --><div class="section">
+</div><div class="section">
   <h2 class="section-title">Funzionalità</h2>
   <div class="cards">
     <div class="card">
@@ -178,7 +178,7 @@ footer {
 </div>
 
   </div>
-</div><!-- SYSTEMS --><div class="section">
+</div><div class="section">
   <h2 class="section-title">Sistemi supportati</h2>
   <div class="cards">
     <div class="card">
@@ -190,7 +190,7 @@ footer {
 </div>
 
   </div>
-</div><!-- SLOGAN --><div class="section">
+</div><div class="section">
   <h2 class="section-title">Slogan</h2>
   <div class="cards">
     <div class="card">
@@ -211,4 +211,4 @@ function closeMenu() {
   document.getElementById("bg").classList.remove("show");
 }
 </script></body>
-  </html>
+</html>
