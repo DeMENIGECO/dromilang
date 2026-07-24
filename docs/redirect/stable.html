@@ -8,14 +8,15 @@
 <body>
     <p>
         Se il reindirizzamento non avviene automaticamente,
-        <a id="redirect-link" href="/">clicca qui</a>.
+        <a id="redirect-link" href="/docs/112/">clicca qui</a>.
     </p>
 
     <script>
-        const params = new URLSearchParams(window.location.search);
-        const page = params.get("page") || "";
+        const page = new URLSearchParams(window.location.search).get("page");
 
-        const url = "/docs/112/" + encodeURIComponent(page) + "";
+        const url = page
+            ? `/docs/112/${encodeURIComponent(page)}.html`
+            : "/docs/112/";
 
         document.getElementById("redirect-link").href = url;
         window.location.replace(url);
