@@ -15,7 +15,7 @@
         const params = new URLSearchParams(window.location.search);
         const page = params.get("page") || "";
 
-        const url = "/docs/112/" + encodeURIComponent(page) + ".html";
+        const url = "/docs/112/" + encodeURIComponent(page) + "";
 
         document.getElementById("redirect-link").href = url;
         window.location.replace(url);
