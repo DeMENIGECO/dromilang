@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reindirizzamento...</title>
+</head>
+<body>
+    <p>
+        Se il reindirizzamento non avviene automaticamente,
+        <a id="redirect-link" href="/">clicca qui</a>.
+    </p>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const page = params.get("page") || "";
+
+        const url = "/docs/112/" + encodeURIComponent(page) + ".html";
+
+        document.getElementById("redirect-link").href = url;
+        window.location.replace(url);
+    </script>
+</body>
+</html>
